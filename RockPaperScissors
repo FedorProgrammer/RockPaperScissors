@@ -1,0 +1,64 @@
+val elements: Array<String> = arrayOf("rock", "paper", "scissors")
+
+var playerscore: Int = 0
+var botscore: Int = 0
+
+fun main() {
+    val input: String = readLine()!!
+    val randomelement = elements.random()
+    println(randomelement)
+
+    if (input !in elements) {
+        println("suction")
+    }
+
+    when(randomelement) {
+
+        "rock" -> when(input) {
+            "paper" -> {println("You won!")
+                        println("your score: " + ++playerscore)
+                        println("bot score: " + botscore)}
+
+            randomelement -> {println("try again")
+                              println("Your score: " + playerscore)
+                              println("Bot score: " + botscore)}
+
+
+            else -> {println("You lost")
+                     println("your score: " + playerscore)
+                     println("bot score: " + ++botscore)}
+        }
+
+        "paper" -> when(input) {
+            "scissors" -> {println("You won")
+                          println("your score: " + ++playerscore)
+                          println("bot score: " + botscore)}
+
+            randomelement -> {println("try again")
+                              println("Your score: " + playerscore)
+                              println("Bot score: " + botscore)}
+
+            else -> {println("You lost")
+                     println("your score: " + playerscore)
+                     println("bot score: " + ++botscore)}
+        }
+
+        "scissors" -> when(input) {
+            "rock" -> {println("You won")
+                       println("your score: " + ++playerscore)
+                       println("bot score: " + botscore)}
+
+            randomelement -> {println("try again")
+                              println("Your score: " + playerscore)
+                              println("Bot score: " + botscore)}
+
+            else -> {println("You lost")
+                     println("your score: " + playerscore)
+                     println("bot score: " + ++botscore)}
+        }
+
+    }
+
+    main()
+
+}
